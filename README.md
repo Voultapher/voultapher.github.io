@@ -1,1 +1,1 @@
-#Personal website prjocts
+#Personal website projects
