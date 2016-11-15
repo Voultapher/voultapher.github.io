@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .text_copy_a, .text_copy_b {
+          fill: none;
+          stroke: #EFEAC5;
+          stroke-width: 0.3vw;
+        }
+        .text_copy_a {
+            stroke-dasharray: 12vw 24vw;
+            animation: anim_a 4s ease-in-out 1s 1;
+        }
+        .text_copy_b {
+            stroke-dasharray: 10vw 10vw;
+            animation: anim_b 14s ease-in-out -5s infinite;
+        }
+        .copys_a
+        {
+            animation: anim_op_a 1s linear 1;
+        }
+        .text_copy_a:nth-child(1) {
+          stroke: #BF2D42;
+          stroke-dashoffset: 12vw;
+        }
+        .text_copy_a:nth-child(2) {
+          stroke: #3DD4F2;
+          stroke-dashoffset: 24vw;
+        }
+        .text_copy_a:nth-child(3) {
+          stroke: #EFEAC5;
+          stroke-dashoffset: 36vw;
+        }
+        .text_copy_b:nth-child(1) {
+          stroke: #BF2D42;
+          stroke-dashoffset: 0vw;
+        }
+        .text_copy_b:nth-child(2) {
+          stroke: #EFEAC5;
+          stroke-dashoffset: 10vw;
+        }
+        @keyframes anim_op_a {
+          from { opacity: 0; }
+          to { opacity: 0; }
+        }
+        @keyframes anim_a {
+          0% {
+            stroke-dashoffset: 10vw;
+            stroke-dasharray: 0vw 20vw;
+          }
+        }
+        @keyframes anim_b {
+          50% {
+            stroke-dashoffset: 12vw;
+            stroke-dasharray: 5vw 12vw;
+          }
+        }
+        body {
+          background: radial-gradient(#153646 30%, #082330);
+          overflow-x: hidden;
+        }
+        hr{
+            height: 1px;
+            color: #EFEAC5;
+            background-color: #EFEAC5;
+            border: none;
+        }
+        .title {
+            font: 16vw/1 Arial;
+        }
+        .main {
+            padding-top: 5vh;
+            text-align: left;
+            font: 1.2em/1 Arial;
+            color: #EFEAC5;
+        }
+        .visitor_info {
+            text-align: center;
+        }
+        .info_text {
+            color: #c1beb0;
+            width: 90%;
+        }
+        .server_info {
+            font-size: 1.2em;
+            padding-top: 5vh;
+        }
+        footer {
+            position : absolute;
+            bottom : 2%;
+        }
+
+        span {
+          display: inline-block;
+          vertical-align: middle;
+          text-align: center;
+        }
+
+    </style>
+</head>
+
+<body>
+<div class="title">
+    <svg width="100" height="20" style="width: 100%; height: 20%;">
+        <symbol id="text_a">
+            <text x="8%" y="90%" class="text_line_a">Include</text>
+        </symbol>
+        <symbol id="text_b">
+            <text x="65%" y="90%" class="text_line_b">OS</text>
+        </symbol>
+
+        <g class="copys_a">
+            <use xlink:href="#text_a" class="text_copy_a"></use>
+            <use xlink:href="#text_a" class="text_copy_a"></use>
+            <use xlink:href="#text_a" class="text_copy_a"></use>
+        </g>
+        <g class="copys_b">
+            <use xlink:href="#text_b" class="text_copy_b"></use>
+            <use xlink:href="#text_b" class="text_copy_b"></use>
+        </g>
+    </svg>
+</div>
+<div class="main">
+    <div class="visitor_info">
+    <span style="font-size: 2em">--- Recent visitors ---</span><hr>
+    <span class="info_text">
+        first line<hr>
+        very long second line that does only end here<hr>
+        third line<hr>
+        even more lines<hr>
+        and MEEEEEEEEEEEEEEEEEEEEEEEEEEE
+    </span><hr>
+    </div>
+
+    <p class="server_info">
+        Active connections: <span style="color: #BF2D42;">2</span><br><hr>
+        Page requests: <span style="color: #BF2D42;">5</span>
+    </p>
+</div>
+<footer class="main">&copy; 2016 IncludeOS</footer>
+</body>
+</html>
